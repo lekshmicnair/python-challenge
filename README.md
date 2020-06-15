@@ -1,3 +1,3 @@
 # python-challenge
-Python Home Work
+Python Home Work.
 Two challenges - PyBank and  PyPoll
