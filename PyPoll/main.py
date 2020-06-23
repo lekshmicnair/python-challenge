@@ -60,9 +60,10 @@ for y in range(Unique_list):
         if Unique_candidate[y]==candidate[index]:
             candidate_vote +=1
 
-    #Calculate the total percentage Vote for each candidate  and add it to alist     
+    #Calculate the total percentage Vote for each candidate, format and add it to a list     
     Percentage_vote=round((candidate_vote/total_vote)*100,3)
-    Perc_vote.append(Percentage_vote)
+    percentage= "{:.3f}%".format(Percentage_vote)
+    Perc_vote.append(percentage)
 
     #Add total vote for each candidate in a list
     Vote_num.append(candidate_vote)
@@ -86,11 +87,11 @@ print("-------------------------")
 print(f'Total Votes: {total_vote}')
 print("-------------------------")
 #Print the winner election data first
-print(f'{dict_vote["candidate"][Maxindex]}: {dict_vote["PercentVote"][Maxindex]}% ({dict_vote["Vote"][Maxindex]})')
+print(f'{dict_vote["candidate"][Maxindex]}: {dict_vote["PercentVote"][Maxindex]} ({dict_vote["Vote"][Maxindex]})')
 #Print rest of the candidate election data  
 for z in range(Unique_list):
     if z != Maxindex:
-        print(f'{dict_vote["candidate"][z]}: {dict_vote["PercentVote"][z]}% ({dict_vote["Vote"][z]})')
+        print(f'{dict_vote["candidate"][z]}: {dict_vote["PercentVote"][z]} ({dict_vote["Vote"][z]})')
 #Print Winner Name
 print("-------------------------")
 print(f'Winner: {dict_vote["candidate"][Maxindex]}')
@@ -110,13 +111,13 @@ L1=["Election Results\n",
 "-------------------------\n",
 (f'Total Votes: {total_vote}\n'), 
 "-------------------------\n",
-(f'{dict_vote["candidate"][Maxindex]}: {dict_vote["PercentVote"][Maxindex]}% ({dict_vote["Vote"][Maxindex]})\n')]
+(f'{dict_vote["candidate"][Maxindex]}: {dict_vote["PercentVote"][Maxindex]} ({dict_vote["Vote"][Maxindex]})\n')]
 
 datafile.writelines(L1)
 
 for z in range(Unique_list):
     if z != Maxindex:
-        L2=[(f'{dict_vote["candidate"][z]}: {dict_vote["PercentVote"][z]}% ({dict_vote["Vote"][z]})\n')]
+        L2=[(f'{dict_vote["candidate"][z]}: {dict_vote["PercentVote"][z]} ({dict_vote["Vote"][z]})\n')]
         datafile.writelines(L2)
 
 L3=[
